@@ -1,0 +1,93 @@
+linters-settings:
+  govet:
+    enable-all: true
+    disable:
+      - fieldalignment
+
+  gocyclo:
+    min-complexity: 16
+
+  maligned:
+    suggest-new: true
+
+  dupl:
+    threshold: 100
+
+  goconst:
+    min-len: 2
+    min-occurrences: 2
+
+  depguard:
+    rules:
+      main:
+        list-mode: lax
+        file:
+          - $all
+        deny:
+          - pkg: github.com/labstack/echo$
+            desc: Please use v4
+
+  misspell:
+    locale: US
+
+  lll:
+    line-length: 120
+
+  goimports:
+    local-prefixes: github.com/golangci/golangci-lint
+
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - opinionated
+      - performance
+      - style
+    disabled-checks:
+      - wrapperFunc
+      # - dupImports
+      - ifElseChain
+      - octalLiteral
+
+  funlen:
+    lines: 100
+    statements: 50
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    # - deadcode
+    - depguard
+    - dogsled
+    - errcheck
+    - gochecknoinits
+    - gocritic
+    - gofmt
+    - revive
+    - gosec
+    - govet
+    - gosimple
+    - ineffassign
+    - lll
+    - misspell
+    - nakedret
+    - exportloopref
+    - staticcheck
+    # - structcheck
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    # - varcheck
+    - whitespace
+
+run:
+  timeout: 5m
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+  exclude:
+    - "DateTime not declared by package time"
