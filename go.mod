@@ -1,4 +1,4 @@
-module github.com/carlosarismendi/testhelper.git
+module github.com/carlosarismendi/testhelper
 
 go 1.23.11
 

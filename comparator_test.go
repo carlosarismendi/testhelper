@@ -32,8 +32,8 @@ func TestCompare(t *testing.T) {
 
 	type compareTest struct {
 		name         string
-		resource1    interface{}
-		resource2    interface{}
+		resource1    any
+		resource2    any
 		ignoreFields []string
 		equal        bool
 	}
