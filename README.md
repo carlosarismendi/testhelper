@@ -1,7 +1,9 @@
 # Test helper
 
 ## Install
-`go get github.com/carlosarismendi/testhelper`
+```bash
+go get github.com/carlosarismendi/testhelper
+```
 
 ## Description
 
